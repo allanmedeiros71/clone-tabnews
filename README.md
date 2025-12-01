@@ -45,3 +45,12 @@ git commit          # cria um commit
 git commit --amend  # altera o último commit
 git diff            # mostra as diferenças entre as alterações
 ```
+
+## Dia 6 - Git
+```bash
+git commit -m "mensagem"  # atalho para fazer novos commits.
+git push                  # empurrar alterações locais para o origin.
+git push --force          # empurrar de forma forçada alterações locais para o origin.
+git push -f               # a forma comprimida do comando anterior.
+git branch                # mostra as branches
+```
