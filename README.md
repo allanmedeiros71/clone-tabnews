@@ -63,10 +63,22 @@ git push -f               # a forma comprimida do comando anterior.
 git branch                # mostra as branches
 ```
 
+## Dia 9
+
+> Fazer `muito com pouco` e não `pouco com muito`... esse é um dos segredos que eu percebi quando o assunto é organização de tarefas.
+
+- Nível 1: Ser lembrado individualmente
+  Menor custo de produção (energia para registrar o que precisa ser feito) e menor tempo de aquecimento (quanto tempo demora pra se ver o que precisa ser feito).
+- Nível 2: Ser lembrado em grupo
+- Nível 3: Expandir conhecimento (Trello ou github)
+- Nível 4: Gerar métricas
+
 ## Dia 10 - Configurar o Prettier
 
 ```bash
 npm install --save-dev prettier # Instala o prettier
 npm run lint:check              # Verifica se há erros de formatação
 npm run lint:fix                # Corrige os erros de formatação
+# Para instalar todos os pacotes do package.json (em um outro PC, por exemplo, ou após clonar o repositório)
+npm install
 ```
