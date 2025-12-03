@@ -107,3 +107,28 @@ Encaminhar email para contato@curso.dev
 - DNS :
   - ns1.vercel-dns.com
   - ns2.vercel-dns.com
+
+## Dia 14 - Proposta de Arquitetura e Pastas
+
+```
+📦root/
+├──📂pages/
+│   └──📄index.js
+├──📂models/
+│   ├──📄users.js
+│   ├──📄content.js
+│   └──📄password.js
+├──📂infra/
+│   ├──📄database.js
+│   ├──📂migrations/
+│   └──📂provisioning/
+│       ├──📂staging/
+│       └──📂production/
+└──📂tests/
+```
+
+## Dia 15 - Testes
+
+### Instalar um Test Runner
+
+npm install --save-dev jest@29.6.2
