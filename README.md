@@ -82,3 +82,28 @@ npm run lint:fix                # Corrige os erros de formatação
 # Para instalar todos os pacotes do package.json (em um outro PC, por exemplo, ou após clonar o repositório)
 npm install
 ```
+
+## Dia 11 - Resolução de DNS
+
+![alt](imagens/dns.png)
+
+## Dia 12 - Registro de Domínio
+
+### Registrar um domínio próprio
+
+codetabs.com.br
+
+![alt](imagens/registro.png)
+registro.br
+
+whatsmydns.net -> DNS Propagation Checker
+Encaminhar email para contato@curso.dev
+
+### Configurar o Servidor de DNS
+
+#### Vercel
+
+- IP : 216.198.79.1
+- DNS :
+  - ns1.vercel-dns.com
+  - ns2.vercel-dns.com
