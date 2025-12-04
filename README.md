@@ -12,6 +12,9 @@ Implementação do https://www.tabnews.com.br para o https://curso.dev
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 
+> [!TIP]
+> [Relembrando Markdown](./markdown.md)
+
 ## Dia 3 - (Node.js, Next.js, React e React DOM)
 
 ### A fundação
@@ -163,3 +166,18 @@ test("Soma de 2 + 2 deve ser igual a 4", () => {
 > [!IMPORTANT]
 > **Introdução ao JavaScript**\
 > [🎥 Curso Grátis de JavaScript e ECMAScript para Iniciantes](https://youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1)
+
+## Dia 17 - Docker
+
+![Esquema de funcionamento de containers](./imagens/docker.png)
+
+```shell
+docker ps # Lista os containers em execução
+docker ps [-a|--all] # lista todos os containers, mesmo os parados
+docker logs <container_id> #
+docker compose up -d --force-recreate
+docker compose [--file|-f] infra/compose.yaml up
+
+psql --host=localhost --username=postgres --port=5432
+
+```
