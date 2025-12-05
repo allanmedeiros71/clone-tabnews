@@ -12,7 +12,7 @@ Implementação do https://www.tabnews.com.br para o https://curso.dev
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
 
-> [!TIP]
+> [!TIP] DICA
 > [Relembrando Markdown](./markdown.md)
 
 ## Dia 3 - (Node.js, Next.js, React e React DOM)
@@ -163,7 +163,7 @@ test("Soma de 2 + 2 deve ser igual a 4", () => {
 });
 ```
 
-> [!IMPORTANT]
+> [!IMPORTANT] IMPORTANTE
 > **Introdução ao JavaScript**\
 > [🎥 Curso Grátis de JavaScript e ECMAScript para Iniciantes](https://youtube.com/playlist?list=PLHz_AreHm4dlsK3Nr9GVvXCbpQyHQl1o1)
 
@@ -178,6 +178,37 @@ docker logs <container_id> #
 docker compose up -d --force-recreate
 docker compose [--file|-f] infra/compose.yaml up
 
+# Ubuntu
+sudo apt install postgresql-client
+# Fedora
+sudo dnf install postgresql
+
 psql --host=localhost --username=postgres --port=5432
 
+```
+
+## Dia 18 - Database
+
+`npm install pg@8.11.3`
+
+[Node-postgres](https://node-postgres.com/#getting-started)
+### Variáveis de Ambiente
+
+![[backend_stateless.png]]
+Deixar a camada da aplicação `stateless`
+
+![[variaveis_ambiente.png]]
+A importância das Variáveis de Ambiente
+
+> [!TIP] DICA
+> Para usar um comando no terminal sem inserir no histórico, colocar um espaço (**·**) no início da linha.
+> Ex: `$ ·POSTGRES_PASSWORD=local_password npm run dev`
+ 
+.env
+```.env
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_USER=local_user
+POSTGRES_PASSWORD=local_password
+POSTGRES_DB=local_db
 ```
