@@ -14,6 +14,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
 > [!TIP] DICA
 > [Relembrando Markdown](./markdown.md)
+> [Notas de Aula](https://github.com/Cerne17/clone-tabnews/branches) do Aluno [Oecarvalho](https://curso.dev/alunos/Oecarvalho)
+
 
 ## Dia 3 - (Node.js, Next.js, React e React DOM)
 
@@ -212,3 +214,4 @@ POSTGRES_USER=local_user
 POSTGRES_PASSWORD=local_password
 POSTGRES_DB=local_db
 ```
+
