@@ -16,7 +16,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 > [Relembrando Markdown](./markdown.md)
 > [Notas de Aula](https://github.com/Cerne17/clone-tabnews/branches) do Aluno [Cerne](https://curso.dev/alunos/Cerne)
 
-
 ## Dia 3 - (Node.js, Next.js, React e React DOM)
 
 ### A fundação
@@ -101,7 +100,7 @@ codetabs.com.br
 ![alt](imagens/registro.png)
 registro.br
 
-whatsmydns.net -> DNS Propagation Checker  
+whatsmydns.net -> DNS Propagation Checker
 Encaminhar email para contato@curso.dev
 
 ### Configurar o Servidor de DNS
@@ -194,6 +193,7 @@ psql --host=localhost --username=postgres --port=5432
 `npm install pg@8.11.3`
 
 [Node-postgres](https://node-postgres.com/#getting-started)
+
 ### Variáveis de Ambiente
 
 ![[backend_stateless.png]]
@@ -205,8 +205,9 @@ A importância das Variáveis de Ambiente
 > [!TIP] DICA
 > Para usar um comando no terminal sem inserir no histórico, colocar um espaço (**·**) no início da linha.
 > Ex: `$ ·POSTGRES_PASSWORD=local_password npm run dev`
- 
+
 .env
+
 ```.env
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
@@ -214,4 +215,3 @@ POSTGRES_USER=local_user
 POSTGRES_PASSWORD=local_password
 POSTGRES_DB=local_db
 ```
-
