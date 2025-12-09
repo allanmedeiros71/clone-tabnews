@@ -76,9 +76,11 @@ async function getOpenedConnections() {
      * Adjust the WHERE clause if you want to count connections to a different database.
      * ::int is used to cast the count to an integer.
      */
-    const res = await query(
-      "SELECT COUNT(*)::int FROM pg_stat_activity WHERE datname='local_db';",
-    );
+    const databaseName = process.env.POSTGRES_DB || "local_db";
+    const res = await query({
+      text: "SELECT COUNT(*)::int FROM pg_stat_activity WHERE datname=$1;",
+      values: [databaseName],
+    });
     const value = res?.[0]?.count;
     return value == null ? null : value;
   } catch (error) {
