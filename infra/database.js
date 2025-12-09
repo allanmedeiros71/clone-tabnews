@@ -21,7 +21,8 @@ async function query(queryTextOrConfig, params) {
     return result.rows ? result.rows : null;
   } finally {
     if (client) {
-      client.release();
+      client.end();
+      //  pq não funciona com client.release(); ??
     }
   }
 }
