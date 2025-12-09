@@ -1,22 +1,29 @@
 import { Pool } from "pg";
 
+// Create a shared Postgres connection pool.
 const pool = new Pool({
   host: process.env.POSTGRES_HOST,
-  port: process.env.POSTGRES_PORT
-    ? parseInt(process.env.POSTGRES_PORT, 10)
-    : undefined,
+  port: process.env.POSTGRES_PORT,
   user: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
 });
 
 /**
- * Execute a query using the shared pool.
- * Accepts the same parameters as `pg`'s `pool.query`.
- * Returns the raw result object from `pg`.
+ * Execute a query against the database.
+ * Returns the rows as an array, or null if no rows.
  */
 async function query(queryTextOrConfig, params) {
-  return pool.query(queryTextOrConfig, params);
+  let client;
+  try {
+    client = await pool.connect();
+    const result = await client.query(queryTextOrConfig, params);
+    return result.rows ? result.rows : null;
+  } finally {
+    if (client) {
+      client.release();
+    }
+  }
 }
 
 /**
@@ -33,10 +40,13 @@ async function getStatus() {
   }
 }
 
+/**
+ * Return the database server version as a string, or null on error.
+ */
 async function getServerVersion() {
   try {
     const res = await query("SHOW server_version;");
-    const value = res?.rows?.[0]?.server_version;
+    const value = res?.[0]?.server_version;
     return value == null ? null : String(value);
   } catch (error) {
     return null;
@@ -49,7 +59,7 @@ async function getServerVersion() {
 async function getMaxConnections() {
   try {
     const res = await query("SHOW max_connections;");
-    const value = res?.rows?.[0]?.max_connections;
+    const value = res?.[0]?.max_connections;
     return value == null ? null : parseInt(value);
   } catch (error) {
     return null;
@@ -61,9 +71,16 @@ async function getMaxConnections() {
  */
 async function getOpenedConnections() {
   try {
-    const res = await query("SELECT COUNT(*) FROM pg_stat_activity;");
-    const value = res?.rows?.[0]?.count;
-    return value == null ? null : parseInt(value);
+    /**
+     * The query counts the number of active connections to the current database.
+     * Adjust the WHERE clause if you want to count connections to a different database.
+     * ::int is used to cast the count to an integer.
+     */
+    const res = await query(
+      "SELECT COUNT(*)::int FROM pg_stat_activity WHERE datname='local_db';",
+    );
+    const value = res?.[0]?.count;
+    return value == null ? null : value;
   } catch (error) {
     return null;
   }

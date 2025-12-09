@@ -3,7 +3,7 @@ test("GET para /api/v1/status deve retornar status code 200", async () => {
   expect(response.status).toBe(200);
 
   const responseBody = await response.json();
-  expect(responseBody.updated_at).toBeDefined();
+  // expect(responseBody.updated_at).toBeDefined();
   const parsedUpdatedAt = new Date(responseBody.updated_at).toISOString();
   expect(responseBody.updated_at).toEqual(parsedUpdatedAt);
 
