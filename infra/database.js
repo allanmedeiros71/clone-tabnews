@@ -19,10 +19,12 @@ async function query(queryTextOrConfig, params) {
     client = await pool.connect();
     const result = await client.query(queryTextOrConfig, params);
     return result.rows ? result.rows : null;
+  } catch (error) {
+    client.release();
+    throw error;
   } finally {
     if (client) {
-      client.end();
-      //  pq não funciona com client.release(); ??
+      client.release();
     }
   }
 }
