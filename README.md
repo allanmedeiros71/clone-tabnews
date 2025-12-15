@@ -242,9 +242,9 @@ npm install dotenv@16.4.4
 
 ```
 
-### Migration é
+### Nas Migration
 
-1. Proibido alterações manuais no banco
+1. É Proibido alterações manuais no banco
 2. Crie um arquivo de migração
-3. "up" para fazer alterações
-4. "down" para desfazer alterações
+3. Use "up" para fazer alterações
+4. Use "down" para desfazer alterações
