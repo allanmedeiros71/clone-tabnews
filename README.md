@@ -1,13 +1,13 @@
 # clone-tabnews
 
-Implementação do https://www.tabnews.com.br para o https://curso.dev
+Implementação do <https://www.tabnews.com.br> para o <https://curso.dev>
 [Link do App na Vercel](https://allanmedeiros71.vercel.app/)
 
 # Notas de Aula
 
 ## Ambiente
 
-```
+```shell
 # Install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 ```
@@ -15,7 +15,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 > [!TIP] DICA
 > [Relembrando Markdown](./markdown.md)
 > [Notas de Aula](https://github.com/Cerne17/clone-tabnews/branches) do Aluno [Cerne](https://curso.dev/alunos/Cerne)
-
 
 ## Dia 3 - (Node.js, Next.js, React e React DOM)
 
@@ -102,7 +101,7 @@ codetabs.com.br
 registro.br
 
 whatsmydns.net -> DNS Propagation Checker  
-Encaminhar email para contato@curso.dev
+Encaminhar email para <contato@curso.dev>
 
 ### Configurar o Servidor de DNS
 
@@ -115,20 +114,20 @@ Encaminhar email para contato@curso.dev
 
 ## Dia 14 - Proposta de Arquitetura e Pastas
 
-```
+```md
 📦root/
 ├──📂pages/
-│   └──📄index.js
+│ └──📄index.js
 ├──📂models/
-│   ├──📄users.js
-│   ├──📄content.js
-│   └──📄password.js
+│ ├──📄users.js
+│ ├──📄content.js
+│ └──📄password.js
 ├──📂infra/
-│   ├──📄database.js
-│   ├──📂migrations/
-│   └──📂provisioning/
-│       ├──📂staging/
-│       └──📂production/
+│ ├──📄database.js
+│ ├──📂migrations/
+│ └──📂provisioning/
+│ ├──📂staging/
+│ └──📂production/
 └──📂tests/
 ```
 
@@ -194,6 +193,7 @@ psql --host=localhost --username=postgres --port=5432
 `npm install pg@8.11.3`
 
 [Node-postgres](https://node-postgres.com/#getting-started)
+
 ### Variáveis de Ambiente
 
 ![[backend_stateless.png]]
@@ -207,6 +207,7 @@ A importância das Variáveis de Ambiente
 > Ex: `$ ·POSTGRES_PASSWORD=local_password npm run dev`
 
 .env
+
 ```.env
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
@@ -216,18 +217,34 @@ POSTGRES_DB=local_db
 ```
 
 ## Dia 19 - Script de serviços
+
 Fuzzy Search -> VSCode -> Ctrl + P -> Digitar o nome do arquivo
-Ex: 
+Ex:
+
 - pk (package.json)
 - pk@scripts (sessão scripts de package.json)
 
 ```shell
-git commit -am "Mensagem" 
-# é igual a 
-# git add . 
-# e 
+git commit -am "Mensagem"
+# é igual a
+# git add .
+# e
 # git commit -m
 ```
 
+## Dia 22 - Migrations por linha de comando
 
+[Página no NPM do node-pg-migrate](https://www.npmjs.com/package/node-pg-migrate)
 
+```shell
+npm install node-pg-migrate@6.2.2
+npm install dotenv@16.4.4
+
+```
+
+### Migration é
+
+1. Proibido alterações manuais no banco
+2. Crie um arquivo de migração
+3. "up" para fazer alterações
+4. "down" para desfazer alterações
