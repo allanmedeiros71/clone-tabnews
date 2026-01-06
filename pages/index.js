@@ -1,6 +1,6 @@
 function Home() {
   return (
-    <html>
+    <div>
       <h1>Tó para tu! Torpedo.</h1>
       <div>
         <iframe
@@ -14,7 +14,7 @@ function Home() {
           allowfullscreen
         ></iframe>
       </div>
-    </html>
+    </div>
   );
 }
 
